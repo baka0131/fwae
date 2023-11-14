@@ -10,7 +10,10 @@
 
             
             overflow-x:hidden;
-            
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+            margin: 0;
         }
 
         ._top{
@@ -18,6 +21,7 @@
             height: 500px;
         }
         .parent {
+            width: auto;
             height: 100px;
             padding: 0;
             margin: 0;
@@ -25,9 +29,9 @@
             transition: background-color 0.3s; /* ホバー時のアニメーション */
         }
         ._bottom{
-            display: block;
             width: 100%;
             height: 400px;
+            margin-top: auto; /* Auto margin from the top will push it to the bottom */
         }
         .movie{
             overflow-x: auto;
@@ -160,6 +164,7 @@
 </head>
 <body>
     <header>
+        <title>唐津ビシネスカレーシ</title>
         <a href="https://kbc.core.ac.jp/">
         
         <div class="img" id="img0">       
@@ -273,7 +278,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Iterate through all elements with the parent class
     parentElements.forEach(function(parentElement) {
         // Set the width of each .parent element to the screen width
-        parentElement.style.width = screen.width + "px";
+        //parentElement.style.width = screen.width + "px";
     });
 
     // Set the width of the .left element to 10% of the screen width
