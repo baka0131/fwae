@@ -269,7 +269,6 @@
 <!-- 現在の HTML コード -->
 
 <script>
-// Add this script after the existing script in your HTML
 document.addEventListener("DOMContentLoaded", function() {
     var parentElements = document.querySelectorAll(".parent");
     
@@ -277,6 +276,12 @@ document.addEventListener("DOMContentLoaded", function() {
     parentElements.forEach(function(parentElement) {
         // Set the width of each .parent element to the screen width
         parentElement.style.width = screen.width + "px";
+    });
+
+    // Set the width of the .left element to 10% of the screen width
+    var leftElements = document.querySelectorAll(".left");
+    leftElements.forEach(function(leftElement) {
+        leftElement.style.width = screen.width * 0.1 + "px";
     });
 });
 
