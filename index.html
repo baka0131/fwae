@@ -2,6 +2,24 @@
 <html>
 <head>
     <style>
+        
+    @media only screen and (max-width: 768px) {
+        body {
+            overflow-x: auto; /* Allow horizontal scrolling on small screens */
+        }
+
+        .parent {
+            width: 100%; /* Set the width to 100% on small screens */
+            overflow: auto; /* Allow horizontal scrolling on small screens */
+        }
+
+        iframe {
+            width: 100%; /* Make the iframes responsive on small screens */
+            height: auto;
+        }
+
+        /* Add more styles as needed for mobile responsiveness */
+    }
         body {
             background-color: black;
             padding: 0;
