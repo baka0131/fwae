@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: black;
+            padding: 0;
+            margin: 0;
+
+            
+            overflow-x:hidden;
+            
+        }
+
+        ._top{
+            width: 100%;
+            height: 500px;
+        }
+        .parent {
+            width: 1980px;
+            height: 100px;
+            padding: 0;
+            margin: 0;
+            overflow: auto;
+            transition: background-color 0.3s; /* ホバー時のアニメーション */
+        }
+        ._bottom{
+            display: block;
+            width: 100%;
+            height: 400px;
+        }
+        .movie{
+            overflow-x: auto;
+            display: flex;
+        }
+        footer{
+            width: 100%;
+            height: 100%;
+            background-color: rgb(36, 36, 36);
+        }
+        iframe{
+            width: 330px;
+            height: 180px;
+            border-radius: 20px;
+            border: rgb(0, 32, 32) 10px solid;
+            opacity: 0.8;
+            background-color: black;
+            margin: 20px;
+        }
+        iframe:hover{
+            border: aqua 10px solid;
+            opacity: 1;
+        }
+        .parent:hover {
+            opacity: 0.7;
+            background-color: rgb(0, 175, 175);
+        }
+        .left {
+            display: flex;
+            float: left;
+            width: 10%;
+            height: 100%;
+            align-items: center; /* 垂直方向に中央揃え */
+            justify-content: center;
+        }
+        .right {
+            display: flex;
+            float: right;
+            width: 90%;
+            height: 100%;
+            align-items: center; /* 垂直方向に中央揃え */
+        }
+        .name {
+            width: 80%;
+            height: 75%;
+            background-color: rgb(0, 54, 54);
+            border-radius: 20px;
+            border: 5px solid aqua;
+            opacity: 0.5;
+        }
+        .name:hover {
+            opacity: 1;
+        }
+        p {
+            color: aqua;
+            white-space: nowrap; /* 自動改行を無効にする */
+            overflow: hidden; /* 文字のはみ出しを非表示にする */
+            text-overflow: ellipsis; /* 文字のはみ出しを省略記号(...)で表示 */
+            margin: 0; /* マージンをリセット */
+            padding: 5px; /* パディングをリセット */
+        }
+        .child {
+            background-color: aqua;
+            width: 50px;
+            height: 80%;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .child:hover{
+            background-color: rgba(0, 255, 255, 0);
+            border: 5px solid aqua;
+            width: 40px;
+            height: 70%;
+        }
+        header{
+            background-color: rgb(250, 250, 250);
+            width: 100%;
+            height: 120px;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+        }
+        a{
+            text-decoration: none;
+        }
+        .button{
+            width: 100%;
+            display: flex;
+            text-align: center;
+            align-items: center; /* 垂直方向に中央揃え */
+            background-color: rgb(0, 114, 114);
+            font-weight: bold;
+            font-size: 150%;
+        }
+        .push_txt{
+            border: black 5px solid;
+        }
+        .parent_push{
+            width: 25%;
+        }
+        .parent_push:hover{
+            background-color: rgb(0, 179, 179);
+        }
+        .your_name{
+            text-align: center;
+        }
+        .img{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 1; /* Start with opacity set to 0 */
+            transition: opacity 0.5s; /* Transition z-index and opacity */
+        }
+        #img0{
+            z-index: -1;
+            background-image: url("https://media.contentapi.ea.com/content/dam/apex-legends/common/articles/s10-map-updates/apex-legends-screenshot-s10-env-02-crackextension-after-clean.jpg");
+        }
+        #img1{
+            z-index: -2;
+            background-image: url("https://www.gamespot.com/a/uploads/original/1587/15875866/3645284-apex-comparison-s2-shattered-forest-after.jpg");
+        }
+        #img2{
+            z-index: -3;
+            background-image: url("https://media.contentapi.ea.com/content/dam/apex-legends/common/articles/s10-map-updates/apex-legends-screenshot-s10-env-01-climatizer-b-before-clean.jpg");
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <a href="https://kbc.core.ac.jp/">
+        
+        <div class="img" id="img0">       
+        </div>
+        <div class="img" id="img1">       
+        </div>
+        <div class="img" id="img2">       
+        </div>
+        <img src="https://kbc.core.ac.jp/wp-content/uploads/2021/02/KBC_logo_2.png"><!--https://kbc.core.ac.jp/wp-content/uploads/2021/02/KBC_logo_2.png-->
+        </a>
+    </header>
+
+    <div class="_top">
+        <div class="parent">
+            <div class="left">
+                <div class="name">
+                    <a href="https://ja.wikipedia.org/wiki/%E4%BA%95%E4%B8%8A%E5%85%89"><p>井上　光:自称ニート Webクリエーター妖精か</p>
+                    <p class="meter"></p></a>
+                </div>
+            </div>
+            <div class="right">
+            </div>
+        </div>
+        <div class="parent">
+            <div class="left">
+                <div class="name">
+                    <a href="https://ja.wikipedia.org/wiki/%E6%B1%9F%E5%B7%9D%E5%8D%93_(%E9%87%8E%E7%90%83)"><p>江川　さん:APEXプレデター</p>
+                    <p class="meter"></p></a>
+                </div>
+            </div>
+            <div class="right">
+            </div>
+        </div>
+        <div class="parent">
+            <div class="left">
+                <div class="name">
+                    <a href="https://youtu.be/0Oqzo2NaHQo?si=4rjPf52PvEXY5hVX"><p>松尾　さん:フォアランナー</p>
+                    <p class="meter"></p></a>
+                </div>
+            </div>
+            <div class="right">
+            </div>
+        </div>
+        <div class="parent">
+            <div class="left">
+                <div class="name">
+                    <a href="https://www.pref.ehime.jp/chu99914/navi/shima/nakajima/index.html"><p>中島　さん:イラストレーター</p>
+                    <p class="meter"></p></a>
+                </div>
+            </div>
+            <div class="right">
+            </div>
+        </div>
+        <div class="parent">
+            <div class="left">
+                <div class="name">
+                    <a href="www.google.com"><p>ななし:記入してください</p>
+                    <p class="meter"></p></a>
+                </div>
+            </div>
+            <div class="right">
+            </div>
+        </div>
+    </div>
+    
+    <div class="_bottom">
+        <div class="movie">
+            <iframe src="https://www.youtube.com/embed/VVTLOKS04WI?si=_YnnNaGoK5Q0v4dh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/tPryrjDPRmI?si=KfYysQ-_jh-gtE3B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/mA9vPg7VGCg?si=M9qefKxnQORDtqWV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/pXBTGw6h9fk?si=oF3MrlTvafM3DBBd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/qfeYT_w3Njs?si=vJhucFUkr969GMWL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/D3vYaedaUbg?si=fli84nl7PH9eUWqA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <footer>
+            <div class="button">
+                <div class="parent_push">
+                    <a href="https://www.youtube.com/watch?v=VVTLOKS04WI"><p class="push_txt">
+                        Twitter
+                    </p></a>
+                </div>
+                <div class="parent_push">
+                    <a href="https://www.youtube.com/watch?v=VVTLOKS04WI"><p class="push_txt">
+                        YouTube
+                    </p></a>
+                </div>
+                <div class="parent_push">
+                    <a href="https://www.youtube.com/watch?v=VVTLOKS04WI"><p class="push_txt">
+                        HP_age
+                    </p></a>
+                </div>
+                <div class="parent_push">
+                    <a href="https://www.youtube.com/watch?v=VVTLOKS04WI"><p class="push_txt">
+                        じゆうらん
+                    </p></a>
+                </div>
+            </div>
+            <a href="google.com" class="your_name">
+                <p>&copy; Made by 2023 ⑨な人PJT & Design_with_ChatGPT</p>
+            </a>
+        </footer>
+    </div>
+</body>
+
+<!-- 現在の HTML コード -->
+
+<script>
+    // .right 要素を取得
+    var rightElements = document.querySelectorAll(".right");
+    const imgElements = document.querySelectorAll('.img');
+    let currentIndex = 0;
+    function imgAnim(){
+        if(currentIndex < imgElements.length-1){
+            imgElements[currentIndex].style.opacity = 0;
+            currentIndex++;
+        }else{
+            currentIndex=0
+            for(let i = 0; i < imgElements.length; i++){
+                imgElements[i].style.opacity = 1;
+            }
+            
+        }
+        
+        setTimeout(imgAnim,9000)
+    }setTimeout(imgAnim,1000)
+    var index2 = 0;
+    var max = 15;
+    var isPaused = false; // アニメーションの一時停止状態を示すフラグ
+    // キーボードイベントリスナーを追加
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            if (!isPaused) {
+                isPaused = true; // 一時停止/再開を切り替え
+            } else {
+                isPaused = false;
+                anim();
+            }
+            console.log(isPaused);
+        }
+    });
+    // 各 .right 親要素に新しい .child 要素を挿入
+    rightElements.forEach(function(rightElement) {
+        for (var i = 0; i < max; i++) {
+            // 各 .right 親要素に10個ずつ .child 要素を挿入
+            var childDiv = document.createElement("div");
+            childDiv.className = "child";
+            rightElement.appendChild(childDiv);
+        }
+    });
+    // イベントリスナーを追加
+    
+    var mouseTf = false;
+    rightElements.forEach(function(rightElement) {
+        rightElement.addEventListener("mouseenter", function(event) {
+            mouseTf = true;
+        });
+
+        rightElement.addEventListener("mouseleave", function(event) {
+            // ホバーから外れた際の処理をここに記述
+            // この中に、.right 要素から外れた際の処理を書いてください
+            mouseTf = false;
+        });
+    });
+    // .child 要素を取得し、childs 配列に格納
+    var childElements = document.querySelectorAll(".child");
+    var meters = document.querySelectorAll(".meter"); // meter要素を取得
+    var childs = Array.from(childElements);
+    var meterArray = Array.from(meters); // meter要素を配列に格納
+    var r = Math.random();
+    var r2 = 0;
+    function anim() {
+        // 各 .child 要素の opacity を index に応じて設定
+        childs.forEach(function(child, index) {
+            if (index2 < max) {
+                index2++;
+            } else {
+                index2 = 1;
+                r = Math.random();
+            }
+            if(mouseTf == false){
+                r2 = (index2 - 0.5) * r * 0.1;
+            }else{
+                r2 = (index2 - 0.5) * r * 0.1 * 10;
+            }
+            
+            child.style.opacity = (max - index2) * 0.1 - r2;
+        });
+        // meter要素のテキストをrの値に設定
+        var r3 = 144-r2;
+        meterArray.forEach(function(meterElement) {
+            meterElement.innerHTML = "FPS: " + r3.toFixed(2)+"Hz";
+        });
+        if (!isPaused) {
+            requestAnimationFrame(anim);
+        }
+    }
+    anim();
+</script>
+</html>
