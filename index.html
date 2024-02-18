@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Background Image Transition</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        animation: bgTransition 60s infinite;
+    }
+
+    @keyframes bgTransition {
+        0% { background-image: url('https://prtimes.jp/i/19104/6/origin/d19104-6-363905-0.jpg'); }
+        50% { background-image: url('https://redfive-re.com/wp-content/uploads/2019/01/8ae6984f6b23b6a2537bd437311273fd.jpg'); }
+        100% { background-image: url('https://th.bing.com/th/id/R.e2ba4288e830826fd4a049ef8197ddec?rik=vRP1%2f6vbJmSGXg&riu=http%3a%2f%2ftoj-fa.co.jp%2fuploads%2f1%2f1%2f8%2f1%2f118170913%2f352455158_orig.png&ehk=lZUm%2bHw478dviKxLXf8gDDFD129o7a1knYjP%2fVk6rs0%3d&risl=&pid=ImgRaw&r=0'); }
+    }
+
+    /* Adjustments */
+    /* Add any additional styles or adjustments as needed */
+
+    header {
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 20px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    footer {
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 20px;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>九州北部地方へようこそ</h1>
+        <h2>自然の息づく美しい地域</h2>
+    </header>
+    
+    <main>
+        <section>
+            <h3>美しい自然景観</h3>
+            <p>九州北部地方には、美しい自然景観が広がっています。緑豊かな山々や清流、渓谷、そして海岸線が見どころです。</p>
+            <img src="beautiful_nature.jpg" alt="Beautiful Nature">
+        </section>
+
+        <section>
+            <h3>歴史と文化</h3>
+            <p>この地域には古代の歴史と豊かな文化が息づいています。歴史的な建造物や伝統的な行事など、多彩な文化体験ができます。</p>
+            <img src="https://th.bing.com/th/id/OIP.G8scCUvOJIrymM-GqDj89QHaE7?rs=1&pid=ImgDetMain" alt="Historical Site">
+        </section>
+        
+        <section>
+            <h3>グルメの楽しみ</h3>
+            <p>九州北部地方は美味しい食材が豊富で、地元のグルメは絶品です。特に海の幸や郷土料理はおすすめです。</p>
+            <img src="https://image.raku-uru.jp/01/8272/86/torimon_image_1598918189579_1200.jpg" alt="Local Cuisine">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Website</p>
+        <h3>Contact Information: example@example.com</h3>
+    </footer>
+</body>
+</html>
