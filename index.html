@@ -5,16 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Background Image Transition</title>
 <style>
+    html {
+        scroll-behavior: smooth;
+    }
+
     body {
         margin: 0;
         padding: 0;
-        height: 100vh;
+        height: 150vh;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         background-size: cover;
         background-repeat: no-repeat;
         animation: bgTransition 60s infinite;
+        overflow-x: hidden;
     }
 
     @keyframes bgTransition {
@@ -23,46 +29,78 @@
         100% { background-image: url('https://th.bing.com/th/id/R.e2ba4288e830826fd4a049ef8197ddec?rik=vRP1%2f6vbJmSGXg&riu=http%3a%2f%2ftoj-fa.co.jp%2fuploads%2f1%2f1%2f8%2f1%2f118170913%2f352455158_orig.png&ehk=lZUm%2bHw478dviKxLXf8gDDFD129o7a1knYjP%2fVk6rs0%3d&risl=&pid=ImgRaw&r=0'); }
     }
 
-    /* Adjustments */
-    /* Add any additional styles or adjustments as needed */
+    header, footer {
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        width: 100%;
+        left: 0;
+    }
 
     header {
-        text-align: center;
-        background-color: rgba(255, 255, 255, 0.5);
-        padding: 20px;
-        width: 100%;
-        position: fixed;
         top: 0;
-        left: 0;
+        position: absolute;
     }
+
+    header:hover {
+        opacity: 0;
+        transition: opacity 0.3s ease; /* 透明化をアニメーションする場合 */
+    }
+
 
     footer {
-        text-align: center;
-        background-color: rgba(255, 255, 255, 0.5);
-        padding: 20px;
-        width: 100%;
-        position: fixed;
         bottom: 0;
-        left: 0;
+        position: fixed;
     }
 
+    footer:hover{
+        opacity: 0;
+        transition: opacity 0.3s ease; /* 透明化をアニメーションする場合 */
+    }
+    
     main {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-
-    main section {
-        margin-bottom: 50px;
+        padding: 20px;
         text-align: center;
+        color: white;
+        overflow-y: auto;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
     }
 
-    main section img {
-        max-width: 200px;
-        height: auto;
+    .section {
+        margin: 20px 0;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        width: 20%;
     }
-    img{
-        width: 200px;
+
+    .section h2 {
+        margin-bottom: 10px;
+    }
+
+    .section p {
+        margin-bottom: 10px;
+    }
+
+    .section img {
+        width: 50%;
+        border-radius: 10px;
+    }
+
+    /* Adjustments for mobile */
+    @media (max-width: 768px) {
+        .section {
+            width: 100%;
+        }
+
+        .section img {
+            width: 80%;
+        }
     }
 </style>
 </head>
@@ -73,23 +111,23 @@
     </header>
     
     <main>
-        <section>
-            <h3>美しい自然景観</h3>
-            <p>九州北部地方には、美しい自然景観が広がっています。緑豊かな山々や清流、渓谷、そして海岸線が見どころです。</p>
-            <img src="https://image.raku-uru.jp/01/8272/86/torimon_image_1598918189579_1200.jpg" alt="Beautiful Nature">
-        </section>
+        <div class="section">
+            <h2>地域の魅力</h2>
+            <p>九州北部地方は、豊かな自然、美しい風景、そして伝統的な文化が息づく魅力的な地域です。</p>
+            <img src="https://image.raku-uru.jp/01/8272/86/torimon_image_1598918189579_1200.jpg" alt="Kyushu Nature">
+        </div>
 
-        <section>
-            <h3>歴史と文化</h3>
-            <p>この地域には古代の歴史と豊かな文化が息づいています。歴史的な建造物や伝統的な行事など、多彩な文化体験ができます。</p>
-            <img src="https://th.bing.com/th/id/OIP.G8scCUvOJIrymM-GqDj89QHaE7?rs=1&pid=ImgDetMain" alt="Historical Site">
-        </section>
-        
-        <section>
-            <h3>グルメの楽しみ</h3>
-            <p>九州北部地方は美味しい食材が豊富で、地元のグルメは絶品です。特に海の幸や郷土料理はおすすめです。</p>
-            <img src="https://image.raku-uru.jp/01/8272/86/torimon_image_1598918189579_1200.jpg" alt="Local Cuisine">
-        </section>
+        <div class="section">
+            <h2>歴史と文化</h2>
+            <p>古代からの歴史を誇る九州北部は、城や神社仏閣、祭りなど、文化的な魅力が豊富です。</p>
+            <img src="https://th.bing.com/th/id/OIP.G8scCUvOJIrymM-GqDj89QHaE7?rs=1&pid=ImgDetMain" alt="Kyushu Culture">
+        </div>
+
+        <div class="section">
+            <h2>食の楽しみ</h2>
+            <p>この地域は新鮮な海産物や豊富な食材を使用した美食でも有名です。</p>
+            <img src="https://image.raku-uru.jp/01/8272/86/torimon_image_1598918189579_1200.jpg" alt="Kyushu Food">
+        </div>
     </main>
 
     <footer>
